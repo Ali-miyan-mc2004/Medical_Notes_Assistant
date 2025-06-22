@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+streamlit
+transformers
+torch
+faiss-cpu
+sentence-transformers
+PyPDF2
