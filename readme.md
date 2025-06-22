@@ -36,7 +36,9 @@ HOW TO RUN THE APP?
 Step 1: install python.
 
 
-step 2: Clone the repository.
+step 2: Clone the repository:
+
+https://github.com/Ali-miyan-mc2004/Medical_Notes_Assistant.git
 
 
 step 3: intall all the requirements.
