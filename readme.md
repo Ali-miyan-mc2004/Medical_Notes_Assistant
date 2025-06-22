@@ -76,9 +76,52 @@ step 3:Use the App
 
     wait for the success message.
 
-
     2. Then ask a question in the "❓ Ask a Question" section.
 
     Click Ask Question to get an answer.
 
     Your question and answer will appear below in the Q&A history.
+
+
+
+
+LIMITATIONSL:
+    1. Basic Retrieval with FAISS + MiniLM :
+
+    Limitation: FAISS with MiniLM is fast and light, but may miss nuance in complex medical queries.
+
+    Impact: Might return less relevant chunks or miss important context.
+
+    Improvement: Use a larger embedding model (e.g., all-mpnet-base-v2) or test rerankers after initial retrieval.
+
+
+    2.Answer Quality Depends Heavily on Context
+
+    Limitation: FLAN-T5 is given only ~3 chunks as context, which might not contain the full answer.
+
+    Impact: Some answers may be generic, wrong, or incomplete.
+
+    Improvement: Use a retrieval-augmented generation pipeline with ranking or long-context LLMs (like Claude, Gemini Pro, or GPT-4 Turbo).
+
+
+
+Future Feature Enhancements
+
+     1. User Authentication and Session Management
+    Add login/signup so users have their own space.
+
+    Store each user’s uploaded notes and history separately.
+
+    Enables real-world multi-user usage.
+
+
+    2. Persistent Storage
+
+    Save uploaded notes, chunks, embeddings, and FAISS index in:
+
+    A database (like SQLite/PostgreSQL) for text and metadata.
+
+    Disk-based storage for FAISS (using faiss.write_index()).
+
+    Survives server restarts and scales better.
+
